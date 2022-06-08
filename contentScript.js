@@ -4,7 +4,7 @@
   let currentVideoBookmarks = [];
 
   chrome.runtime.onMessage.addListener((obj, sender, response) => {
-    const { type, value, videoId } = obj;
+    const { type, videoId } = obj;
 
     if (type === "NEW") {
       currentVideo = videoId;
