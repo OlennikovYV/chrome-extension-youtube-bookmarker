@@ -4,11 +4,14 @@
   let currentVideoBookmarks = [];
 
   chrome.runtime.onMessage.addListener((obj, sender, response) => {
-    const { type, videoId } = obj;
+    const { type, value, videoId } = obj;
 
     if (type === "NEW") {
       currentVideo = videoId;
       newVideoLoaded();
+    } else if (type === "PLAY") {
+      youtubePlayer.currentTime = value;
+    } else if (type === "DELETE") {
     }
   });
 
@@ -49,7 +52,7 @@
       desc: "Bookmark at " + getTime(currentTime),
     };
 
-    currentVideo = await fetchBookmarks();
+    currentVideoBookmarks = await fetchBookmarks();
 
     chrome.storage.sync.set({
       [currentVideo]: JSON.stringify(
