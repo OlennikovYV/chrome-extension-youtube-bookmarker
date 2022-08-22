@@ -1,7 +1,7 @@
 {
   "name": "My youtube bookmarks",
-  "version": "0.1.0",
-  "description": "Saving timestamps in youtube videos",
+  "version": "1.0.0",
+  "description": "Saving timestamps in youtube videos. Thanks to Raman Hundal for providing the training materials. https://www.youtube.com/watch?v=0n809nd4Zu4",
   "permissions": ["storage", "tabs"],
   "host_permissions": ["https://*.youtube.com/*"],
   "background": {
